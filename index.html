@@ -10,52 +10,66 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
+
 body{
   font-family:'Inter',sans-serif;
-  background:#07070a;
+  background:#050507;
   color:#fff;
   overflow-x:hidden;
 }
 
-/* subtle glow */
-.bg-glow{
+/* PREMIUM BACKGROUND */
+.bg{
   position:fixed;
-  width:700px;
-  height:700px;
-  background:radial-gradient(circle,#7c3aed22,transparent 60%);
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
+  inset:0;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(124,58,237,0.18), transparent 55%),
+    radial-gradient(circle at 80% 20%, rgba(79,70,229,0.12), transparent 40%);
+  z-index:-2;
+}
+
+.noise{
+  position:fixed;
+  inset:0;
+  opacity:.03;
+  background:url('https://grainy-gradients.vercel.app/noise.svg');
   z-index:-1;
 }
 
-/* layout */
+/* LAYOUT */
 .container{
   max-width:1100px;
   margin:auto;
   padding:40px 20px;
 }
 
+/* NAV */
 nav{
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  margin-bottom:80px;
+  align-items:flex-start;
+  margin-bottom:60px;
+}
+
+.logo{
+  font-size:20px;
+  line-height:1.2;
+  letter-spacing:.5px;
 }
 
 nav a{
-  color:#888;
+  color:#777;
   text-decoration:none;
-  margin-left:20px;
+  margin-left:18px;
   font-size:14px;
   transition:.3s;
 }
+
 nav a:hover{color:#fff}
 
-h1,h2{font-family:'Space Grotesk'}
-
+/* HERO */
 .hero{
-  height:85vh;
+  min-height:85vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -67,40 +81,54 @@ h1,h2{font-family:'Space Grotesk'}
 }
 
 .hero h1{
-  font-size:72px;
+  font-family:'Space Grotesk';
+  font-size:clamp(52px,11vw,96px);
+  line-height:.9;
+  letter-spacing:-3px;
 }
 
 .hero p{
+  margin-top:18px;
   color:#aaa;
-  margin-top:10px;
+  font-size:18px;
 }
 
 .signature{
   margin-top:20px;
-  font-size:16px;
-  color:#ccc;
+  font-size:18px;
+  color:#d1d1d1;
+  max-width:520px;
   opacity:0;
-  animation:fadeIn 1.5s ease forwards;
-  animation-delay:.5s;
+  animation:fadeIn 1.6s ease forwards;
+  animation-delay:.4s;
 }
 
+/* BUTTONS */
 .buttons{
-  margin-top:30px;
+  margin-top:34px;
   display:flex;
-  gap:15px;
+  gap:14px;
+  flex-wrap:wrap;
+  justify-content:center;
 }
 
 .btn{
-  padding:12px 26px;
-  border-radius:10px;
+  padding:13px 32px;
+  border-radius:14px;
+  font-size:15px;
   text-decoration:none;
-  font-size:14px;
-  transition:.3s;
+  transition:.35s;
 }
 
 .btn-main{
   background:linear-gradient(135deg,#7c3aed,#4f46e5);
   color:#fff;
+  box-shadow:0 0 25px rgba(124,58,237,.35);
+}
+
+.btn-main:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 40px rgba(124,58,237,.6);
 }
 
 .btn-outline{
@@ -108,14 +136,16 @@ h1,h2{font-family:'Space Grotesk'}
   color:#fff;
 }
 
-.btn:hover{opacity:.85}
+.btn-outline:hover{
+  border-color:#666;
+}
 
-/* sections */
+/* SECTIONS */
 .section{
-  margin-top:120px;
+  margin-top:130px;
   opacity:0;
   transform:translateY(40px);
-  transition:all .8s ease;
+  transition:.9s;
 }
 
 .section.show{
@@ -123,13 +153,26 @@ h1,h2{font-family:'Space Grotesk'}
   transform:translateY(0);
 }
 
-.section p{
-  color:#aaa;
-  max-width:650px;
-  line-height:1.7;
+.section h2{
+  font-family:'Space Grotesk';
+  margin-bottom:18px;
 }
 
-/* cards */
+.section p{
+  color:#aaa;
+  max-width:620px;
+  line-height:1.75;
+}
+
+/* PRESENCE BLOCK */
+.presence{
+  margin-top:60px;
+  font-size:22px;
+  line-height:1.6;
+  color:#ccc;
+}
+
+/* CARDS */
 .cards{
   margin-top:40px;
   display:grid;
@@ -139,56 +182,80 @@ h1,h2{font-family:'Space Grotesk'}
 
 .card{
   padding:22px;
-  border-radius:14px;
+  border-radius:16px;
   background:rgba(255,255,255,0.02);
   border:1px solid rgba(255,255,255,0.05);
   transition:.3s;
 }
+
 .card:hover{
   transform:translateY(-6px);
   border-color:#7c3aed;
 }
 
-/* quote */
+/* QUOTES */
 .quote{
   margin-top:30px;
   font-style:italic;
-  color:#ccc;
+  font-size:20px;
+  color:#ddd;
 }
 
-/* hidden */
-.hidden{
-  margin-top:120px;
+/* SECRET */
+.secret{
+  margin-top:140px;
   text-align:center;
   font-size:12px;
-  color:#444;
-  opacity:.5;
+  color:#333;
 }
 
-/* footer */
+/* FOOTER */
 .footer{
-  margin-top:80px;
+  margin-top:90px;
   text-align:center;
+  font-size:18px;
+  color:#ddd;
 }
 
-/* animation */
+.domain{
+  margin-top:20px;
+  display:inline-block;
+  padding:10px 26px;
+  border-radius:999px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  font-size:14px;
+}
+
+/* ANIMATION */
 @keyframes fadeIn{
-  to{
-    opacity:1;
-    transform:translateY(0);
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  nav{margin-bottom:30px}
+  .hero{min-height:75vh}
+  .hero h1{
+    font-size:56px;
+    letter-spacing:-2px;
   }
+  .signature{font-size:16px;max-width:320px}
+  .section{margin-top:100px}
+  .quote{font-size:18px}
 }
 </style>
 </head>
 
 <body>
 
-<div class="bg-glow"></div>
+<div class="bg"></div>
+<div class="noise"></div>
 
 <div class="container">
 
 <nav>
-<div>Dmytro Lyashok</div>
+<div class="logo">Dmytro<br>Lyashok</div>
 <div>
 <a href="#about">About</a>
 <a href="#wins">Wins</a>
@@ -198,9 +265,9 @@ h1,h2{font-family:'Space Grotesk'}
 </nav>
 
 <div class="hero">
-<h1>Dmytro Lyashok</h1>
+<h1>Dmytro<br>Lyashok</h1>
 <p>Builder. Risk-taker. Silent operator.</p>
-<div class="signature">I don’t chase opportunities. I build them.</div>
+<div class="signature">I move before others understand.</div>
 
 <div class="buttons">
 <a href="https://instagram.com/dmytrolyashok" target="_blank" class="btn btn-main">Instagram</a>
@@ -211,20 +278,25 @@ h1,h2{font-family:'Space Grotesk'}
 <div class="section" id="about">
 <h2>About</h2>
 <p>
-Not everything is visible. Not everything should be explained.  
-I build systems, test ideas and move forward without noise.  
-Some projects fail. Some scale.  
-Each step — experience. Each failure — direction.
+Not everything is visible. Not everything is explained.  
+I build systems, test ideas, and move without noise.  
+Failure is not the end — it's direction.
 </p>
+
+<div class="presence">
+Not loud.<br>
+Not visible.<br>
+But always in motion.
+</div>
 </div>
 
 <div class="section" id="wins">
 <h2>Selected Wins</h2>
 <div class="cards">
 <div class="card">Built multiple digital projects from zero</div>
-<div class="card">Worked with ads, traffic and scaling systems</div>
+<div class="card">Worked with traffic and scaling systems</div>
 <div class="card">Tested dozens of ideas across niches</div>
-<div class="card">Turned failures into direction and growth</div>
+<div class="card">Turned losses into direction and growth</div>
 </div>
 </div>
 
@@ -235,40 +307,37 @@ Each step — experience. Each failure — direction.
 
 <div class="section" id="contact">
 <h2>Contact</h2>
-<p>
-Instagram: @dmytrolyashok<br>
-Email: dmytro.lyashok@icloud.com
-</p>
-
 <div class="buttons">
-<a href="https://instagram.com/dmytrolyashok" target="_blank" class="btn btn-main">Open Instagram</a>
-<a href="mailto:dmytro.lyashok@icloud.com" class="btn btn-outline">Send Email</a>
+<a href="https://instagram.com/dmytrolyashok" target="_blank" class="btn btn-main">Instagram</a>
+<a href="mailto:dmytro.lyashok@icloud.com" class="btn btn-outline">Email</a>
 </div>
 </div>
 
-<div class="hidden">
-If you see this — you’re paying attention.
+<div class="secret">
+You don’t find me. You notice the results.
 </div>
 
 <div class="footer">
 © 2026
+<div class="domain">dmytrolyashok.com</div>
 </div>
 
 </div>
 
 <script>
-// scroll animation
 const sections = document.querySelectorAll('.section');
-window.addEventListener('scroll', ()=>{
+
+function reveal(){
   sections.forEach(sec=>{
     const top = sec.getBoundingClientRect().top;
     if(top < window.innerHeight - 100){
       sec.classList.add('show');
     }
   });
-});
+}
+window.addEventListener('scroll',reveal);
+reveal();
 
-// quotes
 const quotes = [
 "Don't be addicted to money. Work to learn. — Robert Kiyosaki",
 "Winners are not afraid of losing. — Robert Kiyosaki",
