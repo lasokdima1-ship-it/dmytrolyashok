@@ -5,49 +5,91 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dmytro Lyashok</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   font-family:'Inter',sans-serif;
-  background:#0b0b0f;
+  background:#07070a;
   color:#fff;
+  overflow-x:hidden;
 }
+
+/* subtle glow */
+.bg-glow{
+  position:fixed;
+  width:700px;
+  height:700px;
+  background:radial-gradient(circle,#7c3aed22,transparent 60%);
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:-1;
+}
+
+/* layout */
 .container{
   max-width:1100px;
   margin:auto;
   padding:40px 20px;
 }
-h1,h2{font-family:'Space Grotesk'}
+
 nav{
   display:flex;
   justify-content:space-between;
+  align-items:center;
   margin-bottom:80px;
 }
+
 nav a{
-  color:#aaa;
+  color:#888;
   text-decoration:none;
   margin-left:20px;
+  font-size:14px;
+  transition:.3s;
 }
 nav a:hover{color:#fff}
+
+h1,h2{font-family:'Space Grotesk'}
+
 .hero{
+  height:85vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
   text-align:center;
-  margin-top:80px;
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeIn 1.2s ease forwards;
 }
+
 .hero h1{
   font-size:72px;
 }
+
 .hero p{
-  margin-top:10px;
   color:#aaa;
+  margin-top:10px;
 }
+
+.signature{
+  margin-top:20px;
+  font-size:16px;
+  color:#ccc;
+  opacity:0;
+  animation:fadeIn 1.5s ease forwards;
+  animation-delay:.5s;
+}
+
 .buttons{
   margin-top:30px;
   display:flex;
-  justify-content:center;
   gap:15px;
 }
+
 .btn{
   padding:12px 26px;
   border-radius:10px;
@@ -55,67 +97,93 @@ nav a:hover{color:#fff}
   font-size:14px;
   transition:.3s;
 }
+
 .btn-main{
   background:linear-gradient(135deg,#7c3aed,#4f46e5);
   color:#fff;
 }
+
 .btn-outline{
   border:1px solid #333;
   color:#fff;
 }
+
 .btn:hover{opacity:.85}
+
+/* sections */
 .section{
   margin-top:120px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
 }
+
+.section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
 .section p{
   color:#aaa;
   max-width:650px;
   line-height:1.7;
 }
+
+/* cards */
 .cards{
   margin-top:40px;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
 }
+
 .card{
-  padding:20px;
+  padding:22px;
   border-radius:14px;
   background:rgba(255,255,255,0.02);
   border:1px solid rgba(255,255,255,0.05);
+  transition:.3s;
 }
 .card:hover{
+  transform:translateY(-6px);
   border-color:#7c3aed;
 }
+
+/* quote */
 .quote{
   margin-top:30px;
-  font-size:18px;
-  color:#ccc;
   font-style:italic;
+  color:#ccc;
 }
-.footer{
+
+/* hidden */
+.hidden{
   margin-top:120px;
   text-align:center;
+  font-size:12px;
+  color:#444;
+  opacity:.5;
 }
-.footer .buttons{
-  margin-top:20px;
+
+/* footer */
+.footer{
+  margin-top:80px;
+  text-align:center;
 }
-.gradient{
-  position:fixed;
-  width:600px;
-  height:600px;
-  background:radial-gradient(circle,#7c3aed22,transparent);
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  z-index:-1;
+
+/* animation */
+@keyframes fadeIn{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="gradient"></div>
+<div class="bg-glow"></div>
 
 <div class="container">
 
@@ -132,7 +200,7 @@ nav a:hover{color:#fff}
 <div class="hero">
 <h1>Dmytro Lyashok</h1>
 <p>Builder. Risk-taker. Silent operator.</p>
-<p>Moves in silence. Builds in chaos.</p>
+<div class="signature">I don’t chase opportunities. I build them.</div>
 
 <div class="buttons">
 <a href="https://instagram.com/dmytrolyashok" target="_blank" class="btn btn-main">Instagram</a>
@@ -153,18 +221,10 @@ Each step — experience. Each failure — direction.
 <div class="section" id="wins">
 <h2>Selected Wins</h2>
 <div class="cards">
-<div class="card">
-<p>Built multiple digital projects from zero</p>
-</div>
-<div class="card">
-<p>Worked with traffic, ads and scaling systems</p>
-</div>
-<div class="card">
-<p>Tested dozens of ideas across different niches</p>
-</div>
-<div class="card">
-<p>Learned to turn losses into experience and direction</p>
-</div>
+<div class="card">Built multiple digital projects from zero</div>
+<div class="card">Worked with ads, traffic and scaling systems</div>
+<div class="card">Tested dozens of ideas across niches</div>
+<div class="card">Turned failures into direction and growth</div>
 </div>
 </div>
 
@@ -179,25 +239,42 @@ Each step — experience. Each failure — direction.
 Instagram: @dmytrolyashok<br>
 Email: dmytro.lyashok@icloud.com
 </p>
-</div>
 
-<div class="footer">
-<div>© 2026</div>
 <div class="buttons">
 <a href="https://instagram.com/dmytrolyashok" target="_blank" class="btn btn-main">Open Instagram</a>
 <a href="mailto:dmytro.lyashok@icloud.com" class="btn btn-outline">Send Email</a>
 </div>
 </div>
 
+<div class="hidden">
+If you see this — you’re paying attention.
+</div>
+
+<div class="footer">
+© 2026
+</div>
+
 </div>
 
 <script>
+// scroll animation
+const sections = document.querySelectorAll('.section');
+window.addEventListener('scroll', ()=>{
+  sections.forEach(sec=>{
+    const top = sec.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      sec.classList.add('show');
+    }
+  });
+});
+
+// quotes
 const quotes = [
-"Don't be addicted to money. Work to learn. Don't work for money. — Robert Kiyosaki",
-"Winners are not afraid of losing. But losers are. Failure is part of the process of success. — Robert Kiyosaki",
-"It's not how much money you make, but how much money you keep. — Robert Kiyosaki",
+"Don't be addicted to money. Work to learn. — Robert Kiyosaki",
+"Winners are not afraid of losing. — Robert Kiyosaki",
+"Risk comes from not knowing what you're doing. — Warren Buffett",
 "A person who never made a mistake never tried anything new. — Einstein",
-"Risk comes from not knowing what you're doing. — Warren Buffett"
+"Success is not final, failure is not fatal. — Churchill"
 ];
 
 function changeQuote(){
