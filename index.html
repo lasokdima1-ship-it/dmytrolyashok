@@ -18,12 +18,12 @@ body{
   overflow-x:hidden;
 }
 
-/* PREMIUM BACKGROUND */
+/* background */
 .bg{
   position:fixed;
   inset:0;
   background:
-    radial-gradient(circle at 50% 50%, rgba(124,58,237,0.18), transparent 55%),
+    radial-gradient(circle at 50% 50%, rgba(124,58,237,0.22), transparent 55%),
     radial-gradient(circle at 80% 20%, rgba(79,70,229,0.12), transparent 40%);
   z-index:-2;
 }
@@ -36,14 +36,14 @@ body{
   z-index:-1;
 }
 
-/* LAYOUT */
+/* layout */
 .container{
   max-width:1100px;
   margin:auto;
   padding:40px 20px;
 }
 
-/* NAV */
+/* nav */
 nav{
   display:flex;
   justify-content:space-between;
@@ -55,6 +55,10 @@ nav{
   font-size:20px;
   line-height:1.2;
   letter-spacing:.5px;
+  transition:.3s;
+}
+.logo:hover{
+  color:#b8a7ff;
 }
 
 nav a{
@@ -64,10 +68,9 @@ nav a{
   font-size:14px;
   transition:.3s;
 }
-
 nav a:hover{color:#fff}
 
-/* HERO */
+/* hero */
 .hero{
   min-height:85vh;
   display:flex;
@@ -82,30 +85,36 @@ nav a:hover{color:#fff}
 
 .hero h1{
   font-family:'Space Grotesk';
-  font-size:clamp(52px,11vw,96px);
-  line-height:.9;
+  font-size:clamp(56px,11vw,110px);
+  line-height:.88;
   letter-spacing:-3px;
+  transition:.3s;
+}
+
+.hero h1:hover{
+  text-shadow:0 0 30px rgba(124,58,237,.35);
 }
 
 .hero p{
-  margin-top:18px;
+  margin-top:20px;
   color:#aaa;
   font-size:18px;
 }
 
 .signature{
-  margin-top:20px;
-  font-size:18px;
-  color:#d1d1d1;
-  max-width:520px;
+  margin-top:22px;
+  font-size:20px;
+  color:#e2e2e2;
+  max-width:560px;
+  line-height:1.4;
   opacity:0;
-  animation:fadeIn 1.6s ease forwards;
+  animation:fadeIn 1.8s ease forwards;
   animation-delay:.4s;
 }
 
-/* BUTTONS */
+/* buttons */
 .buttons{
-  margin-top:34px;
+  margin-top:36px;
   display:flex;
   gap:14px;
   flex-wrap:wrap;
@@ -113,8 +122,8 @@ nav a:hover{color:#fff}
 }
 
 .btn{
-  padding:13px 32px;
-  border-radius:14px;
+  padding:14px 34px;
+  border-radius:16px;
   font-size:15px;
   text-decoration:none;
   transition:.35s;
@@ -125,29 +134,26 @@ nav a:hover{color:#fff}
   color:#fff;
   box-shadow:0 0 25px rgba(124,58,237,.35);
 }
-
 .btn-main:hover{
   transform:translateY(-2px);
-  box-shadow:0 0 40px rgba(124,58,237,.6);
+  box-shadow:0 0 50px rgba(124,58,237,.7);
 }
 
 .btn-outline{
   border:1px solid #333;
   color:#fff;
 }
-
 .btn-outline:hover{
-  border-color:#666;
+  border-color:#777;
 }
 
-/* SECTIONS */
+/* sections */
 .section{
-  margin-top:130px;
+  margin-top:140px;
   opacity:0;
   transform:translateY(40px);
   transition:.9s;
 }
-
 .section.show{
   opacity:1;
   transform:translateY(0);
@@ -161,18 +167,27 @@ nav a:hover{color:#fff}
 .section p{
   color:#aaa;
   max-width:620px;
-  line-height:1.75;
+  line-height:1.8;
 }
 
-/* PRESENCE BLOCK */
+/* presence */
 .presence{
   margin-top:60px;
   font-size:22px;
   line-height:1.6;
-  color:#ccc;
+  color:#d0d0d0;
 }
 
-/* CARDS */
+/* emotional punch */
+.punch{
+  margin-top:80px;
+  font-size:28px;
+  line-height:1.4;
+  font-family:'Space Grotesk';
+  color:#fff;
+}
+
+/* cards */
 .cards{
   margin-top:40px;
   display:grid;
@@ -182,34 +197,36 @@ nav a:hover{color:#fff}
 
 .card{
   padding:22px;
-  border-radius:16px;
+  border-radius:18px;
   background:rgba(255,255,255,0.02);
   border:1px solid rgba(255,255,255,0.05);
-  transition:.3s;
+  transition:.35s;
 }
 
 .card:hover{
-  transform:translateY(-6px);
+  transform:translateY(-8px) scale(1.02);
   border-color:#7c3aed;
+  box-shadow:0 0 25px rgba(124,58,237,.2);
 }
 
-/* QUOTES */
+/* quote */
 .quote{
   margin-top:30px;
   font-style:italic;
-  font-size:20px;
+  font-size:22px;
   color:#ddd;
 }
 
-/* SECRET */
+/* secret */
 .secret{
-  margin-top:140px;
+  margin-top:160px;
   text-align:center;
   font-size:12px;
-  color:#333;
+  color:#2a2a2a;
+  letter-spacing:.5px;
 }
 
-/* FOOTER */
+/* footer */
 .footer{
   margin-top:90px;
   text-align:center;
@@ -220,28 +237,29 @@ nav a:hover{color:#fff}
 .domain{
   margin-top:20px;
   display:inline-block;
-  padding:10px 26px;
+  padding:10px 28px;
   border-radius:999px;
   background:rgba(255,255,255,.04);
   border:1px solid rgba(255,255,255,.08);
   font-size:14px;
 }
 
-/* ANIMATION */
+/* animation */
 @keyframes fadeIn{
   to{opacity:1;transform:translateY(0)}
 }
 
-/* MOBILE */
+/* mobile */
 @media(max-width:600px){
   nav{margin-bottom:30px}
   .hero{min-height:75vh}
   .hero h1{
-    font-size:56px;
+    font-size:60px;
     letter-spacing:-2px;
   }
-  .signature{font-size:16px;max-width:320px}
-  .section{margin-top:100px}
+  .signature{font-size:17px;max-width:330px}
+  .section{margin-top:110px}
+  .punch{font-size:22px}
   .quote{font-size:18px}
 }
 </style>
@@ -267,7 +285,11 @@ nav a:hover{color:#fff}
 <div class="hero">
 <h1>Dmytro<br>Lyashok</h1>
 <p>Builder. Risk-taker. Silent operator.</p>
-<div class="signature">I move before others understand.</div>
+
+<div class="signature">
+You don’t see the move.<br>
+You see the result.
+</div>
 
 <div class="buttons">
 <a href="https://instagram.com/dmytrolyashok" target="_blank" class="btn btn-main">Instagram</a>
@@ -287,6 +309,12 @@ Failure is not the end — it's direction.
 Not loud.<br>
 Not visible.<br>
 But always in motion.
+</div>
+
+<div class="punch">
+Most people talk.<br>
+Few build.<br>
+I execute.
 </div>
 </div>
 
