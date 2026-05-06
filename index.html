@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Google Ads Account Buyout</title>
-
-  <meta name="description" content="We buy unused Google Ads accounts with verified spend history. Fast review, fair pricing, and direct Telegram contact." />
+  <title>Google Ads — Account Review</title>
+  <meta name="description" content="Review and buyout offers for unused Google Ads accounts with spend history. Agencies and specialists can contact us for an estimated offer." />
   <meta name="theme-color" content="#050505" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,694 +12,692 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg: #050505;
-      --bg2: #0b0b0f;
-      --card: rgba(255,255,255,0.055);
-      --card2: rgba(255,255,255,0.085);
-      --border: rgba(255,255,255,0.12);
-      --border2: rgba(255,255,255,0.2);
-      --text: #f5f5f7;
-      --muted: #a9a9b3;
-      --muted2: #74747e;
-      --gold: #d7b56d;
-      --blue: #2aabee;
-      --green: #34a853;
-      --red: #ea4335;
-      --yellow: #fbbc05;
-      --shadow: 0 30px 100px rgba(0,0,0,0.65);
-      --radius: 28px;
+    :root{
+      --bg:#050505;
+      --bg2:#0b0b0f;
+      --card:rgba(255,255,255,.05);
+      --card2:rgba(255,255,255,.08);
+      --border:rgba(255,255,255,.12);
+      --border2:rgba(255,255,255,.18);
+      --text:#f5f5f7;
+      --muted:#b4b4bf;
+      --muted2:#7e7e88;
+      --gold:#d8b56b;
+      --blue:#7aa5ff;
+      --blue2:#2aabee;
+      --shadow:0 30px 100px rgba(0,0,0,.65);
+      --radius:28px;
+      --radius-sm:20px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      min-height: 100vh;
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      min-height:100vh;
       background:
-        radial-gradient(circle at top left, rgba(66,133,244,0.16), transparent 32%),
-        radial-gradient(circle at top right, rgba(251,188,5,0.10), transparent 30%),
-        radial-gradient(circle at bottom left, rgba(52,168,83,0.10), transparent 34%),
+        radial-gradient(circle at top left, rgba(122,165,255,.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(216,181,107,.08), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(42,171,238,.08), transparent 24%),
         linear-gradient(180deg, #050505 0%, #09090c 42%, #050505 100%);
-      color: var(--text);
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      overflow-x: hidden;
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      overflow-x:hidden;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
       background-image:
-        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-      background-size: 52px 52px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.55), transparent 75%);
-      z-index: 0;
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size:54px 54px;
+      mask-image:linear-gradient(to bottom, rgba(0,0,0,.45), transparent 76%);
+      z-index:0;
     }
 
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.46) 72%);
-      z-index: 0;
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:radial-gradient(circle at center, transparent 0%, rgba(0,0,0,.4) 74%);
+      z-index:0;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    a{text-decoration:none;color:inherit}
+    button, select{font:inherit}
+
+    .page{
+      position:relative;
+      z-index:1;
+      width:min(1180px, calc(100% - 32px));
+      margin:0 auto;
+      padding:26px 0 56px;
     }
 
-    .page {
-      position: relative;
-      z-index: 1;
-      width: min(1180px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 28px 0 52px;
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 16px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:rgba(10,10,13,.68);
+      backdrop-filter:blur(20px);
+      box-shadow:0 12px 50px rgba(0,0,0,.35);
+      position:sticky;
+      top:14px;
+      z-index:40;
     }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 14px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(10,10,13,0.64);
-      backdrop-filter: blur(22px);
-      box-shadow: 0 12px 50px rgba(0,0,0,0.35);
-      position: sticky;
-      top: 14px;
-      z-index: 30;
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding-left: 8px;
-    }
-
-    .brand-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 14px;
+    .brand-mark{
+      width:42px;
+      height:42px;
+      border-radius:14px;
       background:
-        linear-gradient(135deg, rgba(66,133,244,1), rgba(52,168,83,1) 45%, rgba(251,188,5,1) 70%, rgba(234,67,53,1));
-      box-shadow: 0 0 34px rgba(66,133,244,0.24);
-      position: relative;
+        linear-gradient(135deg, rgba(66,133,244,1), rgba(52,168,83,1) 42%, rgba(251,188,5,1) 68%, rgba(234,67,53,1));
+      box-shadow:0 0 30px rgba(66,133,244,.24);
+      position:relative;
+      flex:0 0 auto;
     }
 
-    .brand-mark::after {
-      content: "";
-      position: absolute;
-      inset: 9px;
-      border-radius: 9px;
-      background: #050505;
+    .brand-mark::after{
+      content:"";
+      position:absolute;
+      inset:10px;
+      border-radius:9px;
+      background:#050505;
     }
 
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.05;
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1.06;
+      min-width:0;
     }
 
-    .brand-title {
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+    .brand-title{
+      font-size:15px;
+      font-weight:900;
+      letter-spacing:-.03em;
+      white-space:nowrap;
     }
 
-    .brand-subtitle {
-      margin-top: 4px;
-      color: var(--muted2);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .brand-subtitle{
+      margin-top:5px;
+      color:var(--muted2);
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      white-space:nowrap;
     }
 
-    .lang-switch {
-      display: flex;
-      gap: 6px;
-      padding: 5px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(255,255,255,0.045);
+    .lang-wrap{
+      position:relative;
+      flex:0 0 auto;
     }
 
-    .lang-btn {
-      border: 0;
-      cursor: pointer;
-      color: var(--muted);
-      background: transparent;
-      padding: 9px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 800;
-      transition: .2s ease;
+    .lang-trigger{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      min-height:46px;
+      padding:0 14px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.05);
+      color:#fff;
+      cursor:pointer;
+      font-weight:800;
+      font-size:13px;
+      transition:.2s ease;
     }
 
-    .lang-btn:hover {
-      color: #fff;
-      background: rgba(255,255,255,0.08);
+    .lang-trigger:hover{
+      background:rgba(255,255,255,.09);
     }
 
-    .lang-btn.active {
-      color: #060606;
-      background: #fff;
-      box-shadow: 0 10px 30px rgba(255,255,255,0.14);
+    .lang-trigger svg{
+      width:15px;
+      height:15px;
+      opacity:.8;
     }
 
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 24px;
-      align-items: stretch;
-      padding: 82px 0 28px;
+    .lang-menu{
+      position:absolute;
+      top:56px;
+      right:0;
+      width:190px;
+      padding:8px;
+      border:1px solid var(--border);
+      border-radius:18px;
+      background:rgba(13,13,16,.97);
+      backdrop-filter:blur(20px);
+      box-shadow:0 24px 70px rgba(0,0,0,.45);
+      display:none;
+    }
+
+    .lang-menu.open{display:block}
+
+    .lang-option{
+      width:100%;
+      text-align:left;
+      border:0;
+      background:transparent;
+      color:#fff;
+      padding:12px 12px;
+      border-radius:12px;
+      cursor:pointer;
+      font-size:14px;
+      font-weight:700;
+      transition:.18s ease;
+    }
+
+    .lang-option:hover,
+    .lang-option.active{
+      background:rgba(255,255,255,.08);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:24px;
+      align-items:stretch;
+      padding:80px 0 28px;
     }
 
     .hero-card,
     .side-card,
-    .section-card {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.035));
-      backdrop-filter: blur(24px);
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
+    .section-card,
+    .contact-card{
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
+      backdrop-filter:blur(24px);
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
     }
 
-    .hero-card {
-      padding: 42px;
-      min-height: 560px;
+    .hero-card{
+      padding:42px;
+      min-height:560px;
     }
 
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: -2px;
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
       background:
-        radial-gradient(circle at 20% 0%, rgba(66,133,244,0.24), transparent 32%),
-        radial-gradient(circle at 90% 12%, rgba(215,181,109,0.16), transparent 26%);
-      pointer-events: none;
+        radial-gradient(circle at 18% 0%, rgba(122,165,255,.18), transparent 30%),
+        radial-gradient(circle at 90% 12%, rgba(216,181,107,.14), transparent 24%);
+      pointer-events:none;
     }
 
-    .hero-inner {
-      position: relative;
-      z-index: 2;
+    .hero-inner{position:relative;z-index:2}
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      width:fit-content;
+      padding:10px 14px;
+      border:1px solid rgba(216,181,107,.24);
+      border-radius:999px;
+      background:rgba(216,181,107,.08);
+      color:#f2ddb1;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
     }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      width: fit-content;
-      padding: 9px 13px;
-      border: 1px solid rgba(215,181,109,0.28);
-      border-radius: 999px;
-      background: rgba(215,181,109,0.08);
-      color: #f6dfaa;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:99px;
+      background:var(--gold);
+      box-shadow:0 0 16px rgba(216,181,107,.85);
     }
 
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 99px;
-      background: var(--gold);
-      box-shadow: 0 0 22px rgba(215,181,109,0.9);
+    h1{
+      margin-top:24px;
+      max-width:760px;
+      font-size:clamp(38px, 6.4vw, 78px);
+      line-height:.97;
+      letter-spacing:-.07em;
+      font-weight:900;
     }
 
-    h1 {
-      margin-top: 26px;
-      max-width: 790px;
-      font-size: clamp(42px, 7vw, 88px);
-      line-height: 0.92;
-      letter-spacing: -0.075em;
-      font-weight: 900;
+    .accent{
+      background:linear-gradient(90deg, #d8b56b, #9db9ff 60%, #7ac9ff);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
     }
 
-    .grad {
-      background: linear-gradient(90deg, #ffffff, #d7b56d 44%, #8db5ff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .lead{
+      margin-top:22px;
+      max-width:690px;
+      color:#c8c8d0;
+      font-size:clamp(17px, 1.9vw, 21px);
+      line-height:1.68;
+      letter-spacing:-.02em;
     }
 
-    .lead {
-      margin-top: 24px;
-      max-width: 690px;
-      color: #c8c8d0;
-      font-size: clamp(17px, 2vw, 21px);
-      line-height: 1.65;
-      letter-spacing: -0.02em;
+    .hero-actions{
+      margin-top:30px;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
     }
 
-    .hero-actions {
-      margin-top: 32px;
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      align-items: center;
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:11px;
+      min-height:54px;
+      padding:0 21px;
+      border-radius:999px;
+      border:1px solid var(--border2);
+      font-size:14px;
+      font-weight:850;
+      transition:.22s ease;
+      cursor:pointer;
+      white-space:nowrap;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 11px;
-      min-height: 54px;
-      padding: 0 21px;
-      border-radius: 999px;
-      border: 1px solid var(--border2);
-      font-size: 14px;
-      font-weight: 850;
-      transition: .22s ease;
-      cursor: pointer;
-      white-space: nowrap;
+    .btn-primary{
+      background:#fff;
+      color:#050505;
+      box-shadow:0 20px 50px rgba(255,255,255,.12);
     }
 
-    .btn-primary {
-      background: #fff;
-      color: #050505;
-      box-shadow: 0 20px 50px rgba(255,255,255,0.13);
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      box-shadow:0 24px 70px rgba(255,255,255,.18);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 24px 70px rgba(255,255,255,0.2);
+    .btn-secondary{
+      background:rgba(255,255,255,.055);
+      color:#fff;
     }
 
-    .btn-secondary {
-      background: rgba(255,255,255,0.055);
-      color: #fff;
+    .btn-secondary:hover{
+      background:rgba(255,255,255,.1);
+      transform:translateY(-2px);
     }
 
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.1);
-      transform: translateY(-2px);
+    .tg-icon{
+      width:21px;
+      height:21px;
+      display:block;
     }
 
-    .tg-icon {
-      width: 21px;
-      height: 21px;
-      display: block;
+    .mini-note{
+      margin-top:20px;
+      max-width:660px;
+      color:var(--muted2);
+      font-size:13px;
+      line-height:1.65;
     }
 
-    .mini-note {
-      margin-top: 22px;
-      color: var(--muted2);
-      font-size: 13px;
-      line-height: 1.6;
-      max-width: 620px;
+    .side-card{
+      padding:28px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:560px;
     }
 
-    .side-card {
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 560px;
+    .metric-grid{
+      display:grid;
+      gap:14px;
     }
 
-    .metric-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
+    .metric{
+      padding:22px;
+      border-radius:22px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.045);
     }
 
-    .metric {
-      padding: 22px;
-      border-radius: 22px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.045);
+    .metric-label{
+      color:var(--muted2);
+      font-size:12px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
     }
 
-    .metric-label {
-      color: var(--muted2);
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+    .metric-value{
+      margin-top:8px;
+      font-size:25px;
+      font-weight:900;
+      letter-spacing:-.04em;
     }
 
-    .metric-value {
-      margin-top: 8px;
-      font-size: 25px;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-    }
-
-    .status-card {
-      margin-top: 18px;
-      padding: 22px;
-      border-radius: 24px;
+    .status-card{
+      margin-top:18px;
+      padding:22px;
+      border-radius:24px;
       background:
-        linear-gradient(135deg, rgba(66,133,244,0.18), rgba(52,168,83,0.08)),
-        rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.15);
+        linear-gradient(135deg, rgba(122,165,255,.14), rgba(216,181,107,.08)),
+        rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.14);
     }
 
-    .status-card h3 {
-      font-size: 20px;
-      letter-spacing: -0.03em;
-      margin-bottom: 10px;
+    .status-card h3{
+      font-size:20px;
+      letter-spacing:-.03em;
+      margin-bottom:10px;
     }
 
-    .status-card p {
-      color: #c8c8d0;
-      font-size: 14px;
-      line-height: 1.65;
+    .status-card p{
+      color:#c8c8d0;
+      font-size:14px;
+      line-height:1.67;
     }
 
-    .section {
-      padding: 20px 0;
+    .section{padding:20px 0}
+
+    .section-header{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:18px;
     }
 
-    .section-header {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 18px;
+    .eyebrow{
+      color:var(--gold);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:10px;
     }
 
-    .eyebrow {
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
+    h2{
+      font-size:clamp(28px, 4vw, 50px);
+      line-height:1;
+      letter-spacing:-.055em;
     }
 
-    h2 {
-      font-size: clamp(29px, 4vw, 52px);
-      line-height: 1;
-      letter-spacing: -0.055em;
+    .section-desc{
+      max-width:470px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.68;
     }
 
-    .section-desc {
-      max-width: 460px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.65;
+    .section-card{padding:26px}
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
     }
 
-    .section-card {
-      padding: 26px;
+    .info-box{
+      padding:24px;
+      min-height:190px;
+      border-radius:24px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.045);
     }
 
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+    .info-num{
+      width:38px;
+      height:38px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.1);
+      border:1px solid var(--border);
+      color:#fff;
+      font-weight:900;
+      margin-bottom:18px;
     }
 
-    .info-box {
-      padding: 24px;
-      min-height: 190px;
-      border-radius: 24px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.045);
+    .info-box h3{
+      font-size:18px;
+      letter-spacing:-.03em;
+      margin-bottom:10px;
     }
 
-    .info-num {
-      width: 38px;
-      height: 38px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid var(--border);
-      color: #fff;
-      font-weight: 900;
-      margin-bottom: 18px;
+    .info-box p{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
     }
 
-    .info-box h3 {
-      font-size: 18px;
-      letter-spacing: -0.03em;
-      margin-bottom: 10px;
+    .pricing-wrap{
+      overflow:hidden;
+      border-radius:26px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
     }
 
-    .info-box p {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.65;
+    table{
+      width:100%;
+      border-collapse:collapse;
     }
 
-    .pricing-wrap {
-      overflow: hidden;
-      border-radius: 26px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
+    th, td{
+      padding:19px 22px;
+      text-align:left;
+      border-bottom:1px solid rgba(255,255,255,.085);
+      font-size:15px;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
+    th{
+      color:#fff;
+      background:rgba(255,255,255,.065);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
     }
 
-    th, td {
-      padding: 19px 22px;
-      text-align: left;
-      border-bottom: 1px solid rgba(255,255,255,0.085);
-      font-size: 15px;
+    td{color:#d8d8df}
+    td strong{color:#fff;font-size:16px}
+    tr:last-child td{border-bottom:0}
+    tr:hover td{background:rgba(255,255,255,.035)}
+
+    .price-note{
+      margin-top:16px;
+      padding:18px 20px;
+      border-radius:22px;
+      border:1px solid rgba(216,181,107,.24);
+      background:rgba(216,181,107,.075);
+      color:#ead7a8;
+      font-size:14px;
+      line-height:1.6;
     }
 
-    th {
-      color: #fff;
-      background: rgba(255,255,255,0.065);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+    .requirements{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:14px;
     }
 
-    td {
-      color: #d8d8df;
+    .check-list{
+      display:grid;
+      gap:12px;
     }
 
-    td strong {
-      color: #fff;
-      font-size: 16px;
+    .check-item{
+      display:flex;
+      gap:12px;
+      padding:16px;
+      border-radius:20px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      color:#d9d9df;
+      font-size:14px;
+      line-height:1.55;
     }
 
-    tr:last-child td {
-      border-bottom: 0;
+    .check{
+      flex:0 0 auto;
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      color:#050505;
+      background:#fff;
+      font-size:13px;
+      font-weight:900;
+      margin-top:1px;
     }
 
-    tr:hover td {
-      background: rgba(255,255,255,0.035);
-    }
-
-    .price-note {
-      margin-top: 16px;
-      padding: 18px 20px;
-      border-radius: 22px;
-      border: 1px solid rgba(215,181,109,0.24);
-      background: rgba(215,181,109,0.075);
-      color: #ead7a8;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .requirements {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 14px;
-    }
-
-    .check-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .check-item {
-      display: flex;
-      gap: 12px;
-      padding: 16px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
-      color: #d9d9df;
-      font-size: 14px;
-      line-height: 1.55;
-    }
-
-    .check {
-      flex: 0 0 auto;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      color: #050505;
-      background: #fff;
-      font-size: 13px;
-      font-weight: 900;
-      margin-top: 1px;
-    }
-
-    .contact-card {
-      padding: 34px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
+    .contact-card{
+      padding:34px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:20px;
+      align-items:center;
       background:
-        radial-gradient(circle at top right, rgba(42,171,238,0.18), transparent 32%),
-        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.035));
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 20px;
-      align-items: center;
-      box-shadow: var(--shadow);
+        radial-gradient(circle at top right, rgba(122,165,255,.18), transparent 34%),
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
     }
 
-    .contact-card h2 {
-      margin-bottom: 12px;
+    .contact-card h2{
+      margin-bottom:12px;
     }
 
-    .contact-card p {
-      max-width: 700px;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 15px;
+    .contact-card p{
+      max-width:720px;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:15px;
     }
 
-    .footer {
-      padding-top: 28px;
-      color: var(--muted2);
-      font-size: 13px;
-      text-align: center;
-      line-height: 1.6;
+    .footer{
+      padding-top:28px;
+      color:var(--muted2);
+      font-size:13px;
+      text-align:center;
+      line-height:1.6;
     }
 
-    @media (max-width: 920px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 42px;
+    @media (max-width: 920px){
+      .hero{
+        grid-template-columns:1fr;
+        padding-top:42px;
       }
-
-      .hero-card,
-      .side-card {
-        min-height: auto;
+      .hero-card,.side-card{min-height:auto}
+      .info-grid,.requirements,.contact-card{
+        grid-template-columns:1fr;
       }
-
-      .info-grid,
-      .requirements {
-        grid-template-columns: 1fr;
+      .section-header{
+        display:grid;
+        grid-template-columns:1fr;
       }
-
-      .section-header,
-      .contact-card {
-        grid-template-columns: 1fr;
-        display: grid;
-      }
-
-      .contact-card .btn {
-        width: 100%;
+      .contact-card .btn{
+        width:100%;
       }
     }
 
-    @media (max-width: 640px) {
-      .page {
-        width: min(100% - 22px, 1180px);
-        padding-top: 12px;
+    @media (max-width: 640px){
+      .page{
+        width:min(100% - 22px, 1180px);
+        padding-top:12px;
       }
 
-      .nav {
-        border-radius: 24px;
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 12px;
-        position: relative;
-        top: 0;
+      .nav{
+        border-radius:24px;
+        align-items:flex-start;
+        gap:12px;
+        flex-direction:column;
+        position:relative;
+        top:0;
       }
 
-      .lang-switch {
-        width: 100%;
-        justify-content: space-between;
+      .brand-title,
+      .brand-subtitle{
+        white-space:normal;
       }
 
-      .lang-btn {
-        flex: 1;
-        padding: 10px 8px;
+      .lang-wrap{
+        width:100%;
       }
 
-      .hero-card,
-      .side-card,
-      .section-card,
-      .contact-card {
-        padding: 22px;
-        border-radius: 24px;
+      .lang-trigger{
+        width:100%;
+        justify-content:space-between;
       }
 
-      h1 {
-        font-size: 44px;
+      .lang-menu{
+        width:100%;
+        top:54px;
+        left:0;
+        right:auto;
       }
 
-      .lead {
-        font-size: 16px;
+      .hero-card,.side-card,.section-card,.contact-card{
+        padding:22px;
+        border-radius:24px;
       }
 
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
+      h1{font-size:42px}
+      .lead{font-size:16px}
+
+      .hero-actions{
+        flex-direction:column;
+        align-items:stretch;
       }
 
-      .btn {
-        width: 100%;
+      .btn{width:100%}
+
+      th,td{
+        padding:15px 13px;
+        font-size:13px;
       }
 
-      th, td {
-        padding: 15px 13px;
-        font-size: 13px;
-      }
-
-      td strong {
-        font-size: 14px;
-      }
-
-      .brand-title {
-        font-size: 13px;
-      }
+      td strong{font-size:14px}
     }
   </style>
 </head>
-
 <body>
   <main class="page">
-
     <nav class="nav">
       <div class="brand">
         <div class="brand-mark"></div>
         <div class="brand-text">
-          <div class="brand-title">Google Ads Account Buyout</div>
-          <div class="brand-subtitle" data-i18n="nav_subtitle">Agency acquisition desk</div>
+          <div class="brand-title">Google Ads</div>
+          <div class="brand-subtitle" data-i18n="nav_subtitle">Account review & buyout</div>
         </div>
       </div>
 
-      <div class="lang-switch" aria-label="Language switcher">
-        <button class="lang-btn active" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="es">ES</button>
-        <button class="lang-btn" data-lang="pt">PT-BR</button>
-        <button class="lang-btn" data-lang="uk">UA</button>
+      <div class="lang-wrap">
+        <button class="lang-trigger" id="langTrigger" aria-expanded="false" aria-haspopup="true">
+          <span id="currentLangLabel">English</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <div class="lang-menu" id="langMenu">
+          <button class="lang-option" data-lang="en">English</button>
+          <button class="lang-option" data-lang="es">Español</button>
+          <button class="lang-option" data-lang="pt">Português (Brasil)</button>
+          <button class="lang-option" data-lang="uk">Українська</button>
+        </div>
       </div>
     </nav>
 
@@ -709,15 +706,15 @@
         <div class="hero-inner">
           <div class="badge">
             <span class="dot"></span>
-            <span data-i18n="badge">We buy unused ad accounts</span>
+            <span data-i18n="badge">Open to reviewing unused accounts</span>
           </div>
 
-          <h1 data-i18n="hero_title">
-            Sell unused Google Ads accounts with spend history.
+          <h1 data-i18n-html="hero_title_html">
+            If your agency has unused <span class="accent">Google Ads accounts with spend history</span>, we’re open to reviewing them.
           </h1>
 
           <p class="lead" data-i18n="hero_text">
-            If your agency has old, inactive, or no longer needed Google Ads accounts with verified spend history, we can review them and make a direct buyout offer.
+            We review old, inactive, or no longer needed accounts. If there is a fit, we can discuss a direct buyout offer. There is no obligation to sell.
           </p>
 
           <div class="hero-actions">
@@ -726,14 +723,14 @@
                 <circle cx="120" cy="120" r="120" fill="#2AABEE"/>
                 <path d="M179.8 72.2L155.7 185.7C153.9 193.7 149.2 195.7 142.5 191.9L105.8 164.9L88.1 181.9C86.1 183.9 84.5 185.5 80.7 185.5L83.3 148.1L151.4 86.6C154.4 84 150.8 82.5 146.8 85.1L62.6 138.1L26.3 126.8C18.4 124.3 18.2 118.9 28 115.1L169.9 60.4C176.5 57.9 182.2 61.9 179.8 72.2Z" fill="white"/>
               </svg>
-              <span data-i18n="telegram_btn">Contact on Telegram</span>
+              <span data-i18n="telegram_btn">Discuss on Telegram</span>
             </a>
 
-            <a class="btn btn-secondary" href="#pricing" data-i18n="pricing_btn">View buyout prices</a>
+            <a class="btn btn-secondary" href="#pricing" data-i18n="pricing_btn">View estimated pricing</a>
           </div>
 
           <p class="mini-note" data-i18n="hero_note">
-            We are interested in accounts with real spend history, clean ownership, and basic account details. Final pricing depends on account quality, country, status, and volume.
+            For an initial review, the spend range, account country, and current status are usually enough. Final pricing depends on account quality, country, structure, and volume.
           </p>
         </div>
       </div>
@@ -746,20 +743,20 @@
           </div>
 
           <div class="metric">
-            <div class="metric-label" data-i18n="metric_2_label">Buyout format</div>
-            <div class="metric-value" data-i18n="metric_2_value">Direct offer</div>
+            <div class="metric-label" data-i18n="metric_2_label">Format</div>
+            <div class="metric-value" data-i18n="metric_2_value">Private review</div>
           </div>
 
           <div class="metric">
-            <div class="metric-label" data-i18n="metric_3_label">Best for</div>
+            <div class="metric-label" data-i18n="metric_3_label">Relevant for</div>
             <div class="metric-value" data-i18n="metric_3_value">Agencies & specialists</div>
           </div>
         </div>
 
         <div class="status-card">
-          <h3 data-i18n="side_title">Have inactive accounts?</h3>
+          <h3 data-i18n="side_title">Not using some accounts anymore?</h3>
           <p data-i18n="side_text">
-            Instead of leaving old ad accounts unused, your agency can turn them into an immediate asset. Send basic information, and we will review the offer.
+            If part of your old account base is no longer being used, we can review whether it makes sense for us to make an offer. The process is simple and handled directly.
           </p>
         </div>
       </aside>
@@ -769,10 +766,10 @@
       <div class="section-header">
         <div>
           <div class="eyebrow" data-i18n="how_eyebrow">How it works</div>
-          <h2 data-i18n="how_title">A simple buyout process.</h2>
+          <h2 data-i18n="how_title">Clear, simple, and direct.</h2>
         </div>
         <p class="section-desc" data-i18n="how_desc">
-          We keep the process clear: you send account details, we evaluate them, then we agree on a price and complete the deal.
+          The idea is straightforward: you send basic details, we review them, and if relevant, we discuss a possible buyout offer.
         </p>
       </div>
 
@@ -780,20 +777,20 @@
         <div class="info-grid">
           <div class="info-box">
             <div class="info-num">1</div>
-            <h3 data-i18n="step_1_title">Send account details</h3>
-            <p data-i18n="step_1_text">Share approximate spend history, account country, current status, and whether the account is active or inactive.</p>
+            <h3 data-i18n="step_1_title">Share the basics</h3>
+            <p data-i18n="step_1_text">Send the approximate spend history, the country of the account, and whether it is active, inactive, or no longer needed.</p>
           </div>
 
           <div class="info-box">
             <div class="info-num">2</div>
-            <h3 data-i18n="step_2_title">We review the account</h3>
-            <p data-i18n="step_2_text">We check the basic value factors: spend level, country, history, payment profile, and overall condition.</p>
+            <h3 data-i18n="step_2_title">We review it</h3>
+            <p data-i18n="step_2_text">We look at the basic value factors such as spend level, account country, general condition, and overall fit.</p>
           </div>
 
           <div class="info-box">
             <div class="info-num">3</div>
-            <h3 data-i18n="step_3_title">You receive an offer</h3>
-            <p data-i18n="step_3_text">If everything matches, we make a direct buyout offer. For larger volumes, custom terms are possible.</p>
+            <h3 data-i18n="step_3_title">We discuss an offer</h3>
+            <p data-i18n="step_3_text">If it is relevant for us, we can discuss an estimated price and possible terms. Single accounts and larger batches are both possible.</p>
           </div>
         </div>
       </div>
@@ -802,11 +799,11 @@
     <section class="section" id="pricing">
       <div class="section-header">
         <div>
-          <div class="eyebrow" data-i18n="pricing_eyebrow">Estimated prices</div>
-          <h2 data-i18n="pricing_title">Buyout price by spend history.</h2>
+          <div class="eyebrow" data-i18n="pricing_eyebrow">Estimated pricing</div>
+          <h2 data-i18n="pricing_title">Approximate buyout ranges.</h2>
         </div>
         <p class="section-desc" data-i18n="pricing_desc">
-          These are approximate starting prices. The final offer may be higher depending on country, account status, quality, and volume.
+          These are estimated prices for initial orientation. The final offer may be higher depending on the account and the details.
         </p>
       </div>
 
@@ -820,48 +817,21 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>$100 — $500</td>
-                <td><strong>$30</strong></td>
-              </tr>
-              <tr>
-                <td>$500 — $1,000</td>
-                <td><strong>$70</strong></td>
-              </tr>
-              <tr>
-                <td>$1,000 — $3,000</td>
-                <td><strong>$110</strong></td>
-              </tr>
-              <tr>
-                <td>$3,000 — $5,000</td>
-                <td><strong>$130</strong></td>
-              </tr>
-              <tr>
-                <td>$5,000 — $10,000</td>
-                <td><strong>$150</strong></td>
-              </tr>
-              <tr>
-                <td>$10,000 — $30,000</td>
-                <td><strong>$225</strong></td>
-              </tr>
-              <tr>
-                <td>$30,000 — $50,000</td>
-                <td><strong>$300</strong></td>
-              </tr>
-              <tr>
-                <td>$50,000 — $100,000</td>
-                <td><strong>$330</strong></td>
-              </tr>
-              <tr>
-                <td>$100,000+</td>
-                <td><strong>$400+</strong></td>
-              </tr>
+              <tr><td>$100 — $500</td><td><strong>$30</strong></td></tr>
+              <tr><td>$500 — $1,000</td><td><strong>$70</strong></td></tr>
+              <tr><td>$1,000 — $3,000</td><td><strong>$110</strong></td></tr>
+              <tr><td>$3,000 — $5,000</td><td><strong>$130</strong></td></tr>
+              <tr><td>$5,000 — $10,000</td><td><strong>$150</strong></td></tr>
+              <tr><td>$10,000 — $30,000</td><td><strong>$225</strong></td></tr>
+              <tr><td>$30,000 — $50,000</td><td><strong>$300</strong></td></tr>
+              <tr><td>$50,000 — $100,000</td><td><strong>$330</strong></td></tr>
+              <tr><td>$100,000+</td><td><strong>$400+</strong></td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="price-note" data-i18n="price_note">
-          Important: pricing is not fixed. This is an estimated buyout range. The final price can be higher, and we are always open to negotiation depending on the account.
+          Pricing is not fixed. These values are approximate and used only as a starting point. Depending on the account, the final offer may be higher, and we are open to discussion.
         </div>
       </div>
     </section>
@@ -869,11 +839,11 @@
     <section class="section">
       <div class="section-header">
         <div>
-          <div class="eyebrow" data-i18n="looking_eyebrow">What we are looking for</div>
-          <h2 data-i18n="looking_title">Accounts that agencies no longer use.</h2>
+          <div class="eyebrow" data-i18n="looking_eyebrow">What we usually review</div>
+          <h2 data-i18n="looking_title">Accounts that are no longer in active use.</h2>
         </div>
         <p class="section-desc" data-i18n="looking_desc">
-          If your agency has old accounts sitting unused, they may still have commercial value.
+          If your agency has older accounts that are simply sitting unused, they may still be worth reviewing.
         </p>
       </div>
 
@@ -882,15 +852,15 @@
           <div class="check-list">
             <div class="check-item">
               <span class="check">✓</span>
-              <span data-i18n="req_1">Google Ads accounts with previous real spend history.</span>
+              <span data-i18n="req_1">Accounts with previous spend history.</span>
             </div>
             <div class="check-item">
               <span class="check">✓</span>
-              <span data-i18n="req_2">Old, inactive, or no longer needed agency accounts.</span>
+              <span data-i18n="req_2">Inactive, older, or no longer needed accounts.</span>
             </div>
             <div class="check-item">
               <span class="check">✓</span>
-              <span data-i18n="req_3">Accounts from different countries and billing profiles.</span>
+              <span data-i18n="req_3">Accounts from different countries and billing setups.</span>
             </div>
           </div>
         </div>
@@ -899,15 +869,15 @@
           <div class="check-list">
             <div class="check-item">
               <span class="check">✓</span>
-              <span data-i18n="req_4">Approximate spend amount and account country are enough for the first review.</span>
+              <span data-i18n="req_4">For a first review, an approximate spend range and the country are enough.</span>
             </div>
             <div class="check-item">
               <span class="check">✓</span>
-              <span data-i18n="req_5">We can discuss single accounts or larger batches.</span>
+              <span data-i18n="req_5">We can discuss individual accounts or larger batches.</span>
             </div>
             <div class="check-item">
               <span class="check">✓</span>
-              <span data-i18n="req_6">Final terms are discussed directly before any deal.</span>
+              <span data-i18n="req_6">Any final terms are discussed directly before a deal is made.</span>
             </div>
           </div>
         </div>
@@ -918,9 +888,9 @@
       <div class="contact-card">
         <div>
           <div class="eyebrow" data-i18n="contact_eyebrow">Contact</div>
-          <h2 data-i18n="contact_title">Have accounts to sell?</h2>
+          <h2 data-i18n="contact_title">Would you like us to review an account?</h2>
           <p data-i18n="contact_text">
-            Send the account spend range, country, and current status. We will review it and reply with a possible buyout offer.
+            Send the spend range, account country, and current status, and we can let you know whether it is relevant for us and what an approximate offer could look like.
           </p>
         </div>
 
@@ -929,231 +899,273 @@
             <circle cx="120" cy="120" r="120" fill="#2AABEE"/>
             <path d="M179.8 72.2L155.7 185.7C153.9 193.7 149.2 195.7 142.5 191.9L105.8 164.9L88.1 181.9C86.1 183.9 84.5 185.5 80.7 185.5L83.3 148.1L151.4 86.6C154.4 84 150.8 82.5 146.8 85.1L62.6 138.1L26.3 126.8C18.4 124.3 18.2 118.9 28 115.1L169.9 60.4C176.5 57.9 182.2 61.9 179.8 72.2Z" fill="white"/>
           </svg>
-          <span data-i18n="telegram_btn">Contact on Telegram</span>
+          <span data-i18n="telegram_btn">Discuss on Telegram</span>
         </a>
       </div>
     </section>
 
     <footer class="footer">
       <span data-i18n="footer_text">
-        Independent account acquisition page. Google Ads is a trademark of Google LLC. This page is not affiliated with Google.
+        Independent account review page. Google Ads is a trademark of Google LLC. This page is not affiliated with Google.
       </span>
     </footer>
-
   </main>
 
   <script>
     const translations = {
       en: {
-        nav_subtitle: "Agency acquisition desk",
-        badge: "We buy unused ad accounts",
-        hero_title: "Sell unused Google Ads accounts with spend history.",
-        hero_text: "If your agency has old, inactive, or no longer needed Google Ads accounts with verified spend history, we can review them and make a direct buyout offer.",
-        telegram_btn: "Contact on Telegram",
-        pricing_btn: "View buyout prices",
-        hero_note: "We are interested in accounts with real spend history, clean ownership, and basic account details. Final pricing depends on account quality, country, status, and volume.",
+        lang_label: "English",
+        nav_subtitle: "Account review & buyout",
+        badge: "Open to reviewing unused accounts",
+        hero_title_html: 'If your agency has unused <span class="accent">Google Ads accounts with spend history</span>, we’re open to reviewing them.',
+        hero_text: "We review old, inactive, or no longer needed accounts. If there is a fit, we can discuss a direct buyout offer. There is no obligation to sell.",
+        telegram_btn: "Discuss on Telegram",
+        pricing_btn: "View estimated pricing",
+        hero_note: "For an initial review, the spend range, account country, and current status are usually enough. Final pricing depends on account quality, country, structure, and volume.",
         metric_1_label: "Spend history",
         metric_1_value: "$100 — $100,000+",
-        metric_2_label: "Buyout format",
-        metric_2_value: "Direct offer",
-        metric_3_label: "Best for",
+        metric_2_label: "Format",
+        metric_2_value: "Private review",
+        metric_3_label: "Relevant for",
         metric_3_value: "Agencies & specialists",
-        side_title: "Have inactive accounts?",
-        side_text: "Instead of leaving old ad accounts unused, your agency can turn them into an immediate asset. Send basic information, and we will review the offer.",
+        side_title: "Not using some accounts anymore?",
+        side_text: "If part of your old account base is no longer being used, we can review whether it makes sense for us to make an offer. The process is simple and handled directly.",
         how_eyebrow: "How it works",
-        how_title: "A simple buyout process.",
-        how_desc: "We keep the process clear: you send account details, we evaluate them, then we agree on a price and complete the deal.",
-        step_1_title: "Send account details",
-        step_1_text: "Share approximate spend history, account country, current status, and whether the account is active or inactive.",
-        step_2_title: "We review the account",
-        step_2_text: "We check the basic value factors: spend level, country, history, payment profile, and overall condition.",
-        step_3_title: "You receive an offer",
-        step_3_text: "If everything matches, we make a direct buyout offer. For larger volumes, custom terms are possible.",
-        pricing_eyebrow: "Estimated prices",
-        pricing_title: "Buyout price by spend history.",
-        pricing_desc: "These are approximate starting prices. The final offer may be higher depending on country, account status, quality, and volume.",
+        how_title: "Clear, simple, and direct.",
+        how_desc: "The idea is straightforward: you send basic details, we review them, and if relevant, we discuss a possible buyout offer.",
+        step_1_title: "Share the basics",
+        step_1_text: "Send the approximate spend history, the country of the account, and whether it is active, inactive, or no longer needed.",
+        step_2_title: "We review it",
+        step_2_text: "We look at the basic value factors such as spend level, account country, general condition, and overall fit.",
+        step_3_title: "We discuss an offer",
+        step_3_text: "If it is relevant for us, we can discuss an estimated price and possible terms. Single accounts and larger batches are both possible.",
+        pricing_eyebrow: "Estimated pricing",
+        pricing_title: "Approximate buyout ranges.",
+        pricing_desc: "These are estimated prices for initial orientation. The final offer may be higher depending on the account and the details.",
         table_spend: "Account spend history",
         table_price: "Estimated buyout price",
-        price_note: "Important: pricing is not fixed. This is an estimated buyout range. The final price can be higher, and we are always open to negotiation depending on the account.",
-        looking_eyebrow: "What we are looking for",
-        looking_title: "Accounts that agencies no longer use.",
-        looking_desc: "If your agency has old accounts sitting unused, they may still have commercial value.",
-        req_1: "Google Ads accounts with previous real spend history.",
-        req_2: "Old, inactive, or no longer needed agency accounts.",
-        req_3: "Accounts from different countries and billing profiles.",
-        req_4: "Approximate spend amount and account country are enough for the first review.",
-        req_5: "We can discuss single accounts or larger batches.",
-        req_6: "Final terms are discussed directly before any deal.",
+        price_note: "Pricing is not fixed. These values are approximate and used only as a starting point. Depending on the account, the final offer may be higher, and we are open to discussion.",
+        looking_eyebrow: "What we usually review",
+        looking_title: "Accounts that are no longer in active use.",
+        looking_desc: "If your agency has older accounts that are simply sitting unused, they may still be worth reviewing.",
+        req_1: "Accounts with previous spend history.",
+        req_2: "Inactive, older, or no longer needed accounts.",
+        req_3: "Accounts from different countries and billing setups.",
+        req_4: "For a first review, an approximate spend range and the country are enough.",
+        req_5: "We can discuss individual accounts or larger batches.",
+        req_6: "Any final terms are discussed directly before a deal is made.",
         contact_eyebrow: "Contact",
-        contact_title: "Have accounts to sell?",
-        contact_text: "Send the account spend range, country, and current status. We will review it and reply with a possible buyout offer.",
-        footer_text: "Independent account acquisition page. Google Ads is a trademark of Google LLC. This page is not affiliated with Google."
+        contact_title: "Would you like us to review an account?",
+        contact_text: "Send the spend range, account country, and current status, and we can let you know whether it is relevant for us and what an approximate offer could look like.",
+        footer_text: "Independent account review page. Google Ads is a trademark of Google LLC. This page is not affiliated with Google."
       },
 
       es: {
-        nav_subtitle: "Mesa de adquisición para agencias",
-        badge: "Compramos cuentas publicitarias sin uso",
-        hero_title: "Venda cuentas de Google Ads sin uso con historial de gasto.",
-        hero_text: "Si su agencia tiene cuentas antiguas, inactivas o que ya no necesita de Google Ads con historial de gasto verificado, podemos revisarlas y hacer una oferta directa de compra.",
-        telegram_btn: "Contactar por Telegram",
-        pricing_btn: "Ver precios de compra",
-        hero_note: "Nos interesan cuentas con historial real de gasto, propiedad clara y datos básicos de la cuenta. El precio final depende de la calidad, país, estado y volumen.",
+        lang_label: "Español",
+        nav_subtitle: "Revisión y compra de cuentas",
+        badge: "Abiertos a revisar cuentas sin uso",
+        hero_title_html: 'Si su agencia tiene <span class="accent">cuentas de Google Ads con historial de gasto</span> que ya no utiliza, podemos revisarlas.',
+        hero_text: "Revisamos cuentas antiguas, inactivas o que ya no son necesarias. Si encajan con lo que buscamos, podemos conversar sobre una oferta directa. No existe obligación de vender.",
+        telegram_btn: "Hablar por Telegram",
+        pricing_btn: "Ver precios estimados",
+        hero_note: "Para una revisión inicial, normalmente basta con el rango de gasto, el país de la cuenta y su estado actual. El precio final depende de la calidad, país, estructura y volumen.",
         metric_1_label: "Historial de gasto",
         metric_1_value: "$100 — $100,000+",
-        metric_2_label: "Formato de compra",
-        metric_2_value: "Oferta directa",
-        metric_3_label: "Ideal para",
+        metric_2_label: "Formato",
+        metric_2_value: "Revisión privada",
+        metric_3_label: "Relevante para",
         metric_3_value: "Agencias y especialistas",
-        side_title: "¿Tiene cuentas inactivas?",
-        side_text: "En lugar de dejar cuentas publicitarias antiguas sin uso, su agencia puede convertirlas en un activo inmediato. Envíe información básica y revisaremos la oferta.",
+        side_title: "¿Ya no usan algunas cuentas?",
+        side_text: "Si parte de sus cuentas antiguas ya no se utiliza, podemos revisar si tiene sentido presentar una oferta. El proceso es simple y se maneja directamente.",
         how_eyebrow: "Cómo funciona",
-        how_title: "Un proceso de compra simple.",
-        how_desc: "Mantenemos el proceso claro: usted envía los datos de la cuenta, los evaluamos, acordamos un precio y completamos la operación.",
-        step_1_title: "Envíe los datos de la cuenta",
-        step_1_text: "Comparta el gasto aproximado, país de la cuenta, estado actual y si la cuenta está activa o inactiva.",
-        step_2_title: "Revisamos la cuenta",
-        step_2_text: "Evaluamos factores básicos de valor: nivel de gasto, país, historial, perfil de pago y condición general.",
-        step_3_title: "Recibe una oferta",
-        step_3_text: "Si todo encaja, hacemos una oferta directa de compra. Para volúmenes grandes, son posibles condiciones personalizadas.",
+        how_title: "Claro, simple y directo.",
+        how_desc: "La idea es sencilla: usted envía datos básicos, nosotros los revisamos y, si encaja, hablamos de una posible oferta.",
+        step_1_title: "Comparta lo básico",
+        step_1_text: "Envíe el historial aproximado de gasto, el país de la cuenta y si está activa, inactiva o simplemente ya no la utilizan.",
+        step_2_title: "La revisamos",
+        step_2_text: "Analizamos factores básicos como nivel de gasto, país de la cuenta, condición general y encaje.",
+        step_3_title: "Hablamos de una oferta",
+        step_3_text: "Si nos resulta relevante, podemos comentar un precio estimado y las posibles condiciones. Puede ser una sola cuenta o varios lotes.",
         pricing_eyebrow: "Precios estimados",
-        pricing_title: "Precio de compra según historial de gasto.",
-        pricing_desc: "Estos son precios iniciales aproximados. La oferta final puede ser mayor según país, estado de la cuenta, calidad y volumen.",
+        pricing_title: "Rangos aproximados de compra.",
+        pricing_desc: "Estos precios son orientativos. La oferta final puede ser mayor según la cuenta y sus detalles.",
         table_spend: "Historial de gasto de la cuenta",
         table_price: "Precio estimado de compra",
-        price_note: "Importante: los precios no son fijos. Este es un rango estimado de compra. El precio final puede ser mayor y siempre estamos abiertos a negociar según la cuenta.",
-        looking_eyebrow: "Qué buscamos",
-        looking_title: "Cuentas que las agencias ya no utilizan.",
-        looking_desc: "Si su agencia tiene cuentas antiguas sin uso, todavía pueden tener valor comercial.",
-        req_1: "Cuentas de Google Ads con historial real de gasto previo.",
-        req_2: "Cuentas antiguas, inactivas o que la agencia ya no necesita.",
-        req_3: "Cuentas de diferentes países y perfiles de facturación.",
-        req_4: "El gasto aproximado y el país de la cuenta son suficientes para la primera revisión.",
-        req_5: "Podemos hablar de cuentas individuales o lotes más grandes.",
-        req_6: "Las condiciones finales se acuerdan directamente antes de cualquier operación.",
+        price_note: "Los precios no son fijos. Estos valores son aproximados y sirven solo como referencia inicial. Dependiendo de la cuenta, la oferta final puede ser mayor y siempre estamos abiertos a conversar.",
+        looking_eyebrow: "Qué solemos revisar",
+        looking_title: "Cuentas que ya no están en uso activo.",
+        looking_desc: "Si su agencia tiene cuentas antiguas simplemente sin uso, aún puede valer la pena revisarlas.",
+        req_1: "Cuentas con historial previo de gasto.",
+        req_2: "Cuentas inactivas, antiguas o que ya no son necesarias.",
+        req_3: "Cuentas de distintos países y configuraciones de facturación.",
+        req_4: "Para una primera revisión, basta con el rango aproximado de gasto y el país.",
+        req_5: "Podemos hablar de cuentas individuales o de lotes más grandes.",
+        req_6: "Cualquier condición final se conversa directamente antes de cerrar un acuerdo.",
         contact_eyebrow: "Contacto",
-        contact_title: "¿Tiene cuentas para vender?",
-        contact_text: "Envíe el rango de gasto, país y estado actual de la cuenta. La revisaremos y responderemos con una posible oferta de compra.",
-        footer_text: "Página independiente de adquisición de cuentas. Google Ads es una marca comercial de Google LLC. Esta página no está afiliada a Google."
+        contact_title: "¿Le gustaría que revisáramos una cuenta?",
+        contact_text: "Envíe el rango de gasto, el país y el estado actual de la cuenta, y le diremos si es relevante para nosotros y cómo podría verse una oferta aproximada.",
+        footer_text: "Página independiente de revisión de cuentas. Google Ads es una marca comercial de Google LLC. Esta página no está afiliada a Google."
       },
 
       pt: {
-        nav_subtitle: "Aquisição para agências",
-        badge: "Compramos contas de anúncios sem uso",
-        hero_title: "Venda contas Google Ads sem uso com histórico de gastos.",
-        hero_text: "Se a sua agência tem contas Google Ads antigas, inativas ou que não são mais utilizadas, com histórico de gastos verificado, podemos analisar e fazer uma oferta direta de compra.",
-        telegram_btn: "Contato pelo Telegram",
-        pricing_btn: "Ver preços de compra",
-        hero_note: "Temos interesse em contas com histórico real de gastos, titularidade clara e informações básicas. O preço final depende da qualidade da conta, país, status e volume.",
+        lang_label: "Português (Brasil)",
+        nav_subtitle: "Análise e compra de contas",
+        badge: "Disponíveis para analisar contas sem uso",
+        hero_title_html: 'Se a sua agência tem <span class="accent">contas Google Ads com histórico de gastos</span> que não utiliza mais, podemos analisá-las.',
+        hero_text: "Analisamos contas antigas, inativas ou que não são mais necessárias. Se fizer sentido para nós, podemos conversar sobre uma oferta direta. Não existe obrigação de vender.",
+        telegram_btn: "Falar no Telegram",
+        pricing_btn: "Ver preços estimados",
+        hero_note: "Para uma análise inicial, normalmente basta a faixa de gastos, o país da conta e o status atual. O valor final depende da qualidade da conta, país, estrutura e volume.",
         metric_1_label: "Histórico de gastos",
         metric_1_value: "$100 — $100,000+",
-        metric_2_label: "Formato de compra",
-        metric_2_value: "Oferta direta",
-        metric_3_label: "Ideal para",
+        metric_2_label: "Formato",
+        metric_2_value: "Análise privada",
+        metric_3_label: "Relevante para",
         metric_3_value: "Agências e especialistas",
-        side_title: "Tem contas inativas?",
-        side_text: "Em vez de deixar contas antigas sem uso, sua agência pode transformá-las em um ativo imediato. Envie informações básicas e analisaremos a oferta.",
+        side_title: "Tem contas que não usa mais?",
+        side_text: "Se parte da sua base antiga de contas não está mais sendo utilizada, podemos avaliar se faz sentido apresentar uma oferta. O processo é simples e direto.",
         how_eyebrow: "Como funciona",
-        how_title: "Um processo simples de compra.",
-        how_desc: "Mantemos o processo claro: você envia os dados da conta, nós avaliamos, depois combinamos um preço e concluímos a negociação.",
-        step_1_title: "Envie os dados da conta",
-        step_1_text: "Informe o histórico aproximado de gastos, país da conta, status atual e se a conta está ativa ou inativa.",
-        step_2_title: "Analisamos a conta",
-        step_2_text: "Verificamos os principais fatores de valor: nível de gasto, país, histórico, perfil de pagamento e condição geral.",
-        step_3_title: "Você recebe uma oferta",
-        step_3_text: "Se tudo estiver alinhado, fazemos uma oferta direta de compra. Para grandes volumes, condições personalizadas são possíveis.",
+        how_title: "Claro, simples e direto.",
+        how_desc: "A ideia é simples: você envia informações básicas, nós analisamos e, se houver interesse, conversamos sobre uma possível oferta.",
+        step_1_title: "Envie o básico",
+        step_1_text: "Informe a faixa aproximada de gastos, o país da conta e se ela está ativa, inativa ou apenas sem uso.",
+        step_2_title: "Nós analisamos",
+        step_2_text: "Observamos fatores básicos como nível de gasto, país da conta, condição geral e aderência ao que buscamos.",
+        step_3_title: "Conversamos sobre uma oferta",
+        step_3_text: "Se for relevante para nós, podemos discutir um preço estimado e as possíveis condições. Pode ser uma conta só ou volumes maiores.",
         pricing_eyebrow: "Preços estimados",
-        pricing_title: "Preço de compra por histórico de gastos.",
-        pricing_desc: "Estes são preços iniciais aproximados. A oferta final pode ser maior dependendo do país, status da conta, qualidade e volume.",
+        pricing_title: "Faixas aproximadas de compra.",
+        pricing_desc: "Esses preços servem como referência inicial. A oferta final pode ser maior dependendo da conta e dos detalhes.",
         table_spend: "Histórico de gastos da conta",
         table_price: "Preço estimado de compra",
-        price_note: "Importante: os preços não são fixos. Este é um valor estimado de compra. O preço final pode ser maior e estamos sempre abertos a negociação dependendo da conta.",
-        looking_eyebrow: "O que buscamos",
-        looking_title: "Contas que agências não utilizam mais.",
-        looking_desc: "Se sua agência tem contas antigas paradas, elas ainda podem ter valor comercial.",
-        req_1: "Contas Google Ads com histórico real de gastos anteriores.",
-        req_2: "Contas antigas, inativas ou que não são mais necessárias para a agência.",
-        req_3: "Contas de diferentes países e perfis de faturamento.",
-        req_4: "O valor aproximado gasto e o país da conta já são suficientes para a primeira análise.",
-        req_5: "Podemos negociar contas individuais ou lotes maiores.",
-        req_6: "As condições finais são discutidas diretamente antes de qualquer negociação.",
+        price_note: "Os preços não são fixos. Estes valores são aproximados e servem apenas como ponto de partida. Dependendo da conta, a oferta final pode ser maior, e estamos abertos a conversar.",
+        looking_eyebrow: "O que costumamos analisar",
+        looking_title: "Contas que não estão mais em uso ativo.",
+        looking_desc: "Se sua agência tem contas antigas paradas, ainda pode valer a pena analisá-las.",
+        req_1: "Contas com histórico anterior de gastos.",
+        req_2: "Contas inativas, antigas ou que não são mais necessárias.",
+        req_3: "Contas de diferentes países e configurações de cobrança.",
+        req_4: "Para uma primeira análise, a faixa aproximada de gastos e o país já são suficientes.",
+        req_5: "Podemos conversar sobre contas individuais ou lotes maiores.",
+        req_6: "Quaisquer termos finais são discutidos diretamente antes de fechar negócio.",
         contact_eyebrow: "Contato",
-        contact_title: "Tem contas para vender?",
-        contact_text: "Envie a faixa de gastos da conta, país e status atual. Vamos analisar e responder com uma possível oferta de compra.",
-        footer_text: "Página independente de aquisição de contas. Google Ads é uma marca comercial da Google LLC. Esta página não é afiliada ao Google."
+        contact_title: "Gostaria que analisássemos uma conta?",
+        contact_text: "Envie a faixa de gastos, o país da conta e o status atual, e informaremos se ela é relevante para nós e como poderia ser uma oferta aproximada.",
+        footer_text: "Página independente de análise de contas. Google Ads é uma marca comercial da Google LLC. Esta página não é afiliada ao Google."
       },
 
       uk: {
-        nav_subtitle: "Викуп акаунтів для агентств",
-        badge: "Ми купуємо невикористані рекламні акаунти",
-        hero_title: "Продайте невикористані Google Ads акаунти з історією витрат.",
-        hero_text: "Якщо у вашого агентства є старі, неактивні або більше не потрібні Google Ads акаунти з підтвердженою історією витрат, ми можемо їх розглянути та зробити пряму пропозицію викупу.",
-        telegram_btn: "Зв’язатися в Telegram",
-        pricing_btn: "Подивитися ціни викупу",
-        hero_note: "Нас цікавлять акаунти з реальною історією витрат, зрозумілим походженням і базовою інформацією. Фінальна ціна залежить від якості акаунта, країни, статусу та обсягу.",
+        lang_label: "Українська",
+        nav_subtitle: "Огляд і викуп акаунтів",
+        badge: "Розглядаємо невикористані акаунти",
+        hero_title_html: 'Якщо у вашого агентства є <span class="accent">Google Ads акаунти з історією витрат</span>, які ви більше не використовуєте, ми можемо їх розглянути.',
+        hero_text: "Ми розглядаємо старі, неактивні або більше не потрібні акаунти. Якщо акаунт нам підходить, можемо обговорити пряму пропозицію. Жодного зобов’язання продавати немає.",
+        telegram_btn: "Написати в Telegram",
+        pricing_btn: "Подивитися орієнтовні ціни",
+        hero_note: "Для первинного розгляду зазвичай достатньо діапазону витрат, країни акаунта та його поточного статусу. Фінальна ціна залежить від якості акаунта, країни, структури та обсягу.",
         metric_1_label: "Історія витрат",
         metric_1_value: "$100 — $100,000+",
-        metric_2_label: "Формат викупу",
-        metric_2_value: "Пряма пропозиція",
-        metric_3_label: "Для кого",
-        metric_3_value: "Агентства та спеціалісти",
-        side_title: "Маєте неактивні акаунти?",
-        side_text: "Замість того щоб залишати старі рекламні акаунти без використання, ваше агентство може перетворити їх на актив. Надішліть базову інформацію, і ми розглянемо пропозицію.",
+        metric_2_label: "Формат",
+        metric_2_value: "Приватний розгляд",
+        metric_3_label: "Актуально для",
+        metric_3_value: "Агентств і спеціалістів",
+        side_title: "Є акаунти, які вже не використовуються?",
+        side_text: "Якщо частина вашої старої бази акаунтів більше не використовується, ми можемо подивитися, чи є сенс робити пропозицію. Процес простий і відбувається напряму.",
         how_eyebrow: "Як це працює",
-        how_title: "Простий процес викупу.",
-        how_desc: "Ми робимо процес зрозумілим: ви надсилаєте дані акаунта, ми оцінюємо їх, погоджуємо ціну та завершуємо угоду.",
-        step_1_title: "Надішліть дані акаунта",
-        step_1_text: "Вкажіть приблизну історію витрат, країну акаунта, поточний статус і чи акаунт активний або неактивний.",
-        step_2_title: "Ми перевіряємо акаунт",
-        step_2_text: "Ми оцінюємо базові фактори цінності: рівень витрат, країну, історію, платіжний профіль і загальний стан.",
-        step_3_title: "Ви отримуєте пропозицію",
-        step_3_text: "Якщо все підходить, ми робимо пряму пропозицію викупу. Для великих обсягів можливі індивідуальні умови.",
+        how_title: "Чітко, просто і напряму.",
+        how_desc: "Суть проста: ви надсилаєте базову інформацію, ми її розглядаємо, і якщо нам це підходить — обговорюємо можливу пропозицію.",
+        step_1_title: "Надішліть базову інформацію",
+        step_1_text: "Вкажіть приблизний діапазон витрат, країну акаунта та чи він активний, неактивний або просто більше не використовується.",
+        step_2_title: "Ми розглянемо акаунт",
+        step_2_text: "Ми оцінюємо базові фактори: рівень витрат, країну акаунта, загальний стан та загальну релевантність.",
+        step_3_title: "Обговорюємо пропозицію",
+        step_3_text: "Якщо акаунт нам цікавий, можемо обговорити орієнтовну ціну та можливі умови. Це може бути як один акаунт, так і більші обсяги.",
         pricing_eyebrow: "Орієнтовні ціни",
-        pricing_title: "Ціна викупу за історією витрат.",
-        pricing_desc: "Це приблизні стартові ціни. Фінальна пропозиція може бути вищою залежно від країни, статусу акаунта, якості та обсягу.",
+        pricing_title: "Приблизні діапазони викупу.",
+        pricing_desc: "Ці ціни наведені для первинного орієнтиру. Фінальна пропозиція може бути вищою залежно від акаунта та деталей.",
         table_spend: "Історія витрат акаунта",
         table_price: "Орієнтовна ціна викупу",
-        price_note: "Важливо: ціни не є фіксованими. Це орієнтовна вартість викупу. Фінальна ціна може бути більшою, і ми завжди можемо домовитися залежно від акаунта.",
-        looking_eyebrow: "Що ми шукаємо",
-        looking_title: "Акаунти, які агентства більше не використовують.",
-        looking_desc: "Якщо у вашого агентства є старі акаунти, які просто лежать без використання, вони все ще можуть мати комерційну цінність.",
-        req_1: "Google Ads акаунти з реальною попередньою історією витрат.",
-        req_2: "Старі, неактивні або більше не потрібні агентству акаунти.",
-        req_3: "Акаунти з різних країн та з різними платіжними профілями.",
-        req_4: "Для першого розгляду достатньо приблизної суми витрат і країни акаунта.",
-        req_5: "Можемо обговорювати як один акаунт, так і великі партії.",
-        req_6: "Фінальні умови обговорюються напряму перед будь-якою угодою.",
+        price_note: "Ціни не є фіксованими. Це орієнтовні значення для стартового розуміння. Залежно від акаунта фінальна пропозиція може бути вищою, і ми відкриті до обговорення.",
+        looking_eyebrow: "Що ми зазвичай розглядаємо",
+        looking_title: "Акаунти, які більше не використовуються активно.",
+        looking_desc: "Якщо у вашого агентства є старі акаунти, які просто лежать без використання, їх все ще може бути варто розглянути.",
+        req_1: "Акаунти з попередньою історією витрат.",
+        req_2: "Неактивні, старі або більше не потрібні акаунти.",
+        req_3: "Акаунти з різних країн і з різними платіжними налаштуваннями.",
+        req_4: "Для першого розгляду достатньо приблизного діапазону витрат і країни.",
+        req_5: "Можемо обговорювати як окремі акаунти, так і більші партії.",
+        req_6: "Будь-які фінальні умови обговорюються напряму перед угодою.",
         contact_eyebrow: "Контакт",
-        contact_title: "Маєте акаунти на продаж?",
-        contact_text: "Надішліть діапазон витрат акаунта, країну та поточний статус. Ми розглянемо його та відповімо з можливою пропозицією викупу.",
-        footer_text: "Незалежна сторінка викупу акаунтів. Google Ads є торговою маркою Google LLC. Ця сторінка не пов’язана з Google."
+        contact_title: "Хочете, щоб ми розглянули акаунт?",
+        contact_text: "Надішліть діапазон витрат, країну акаунта та його поточний статус — і ми скажемо, чи він нам цікавий, та якою може бути приблизна пропозиція.",
+        footer_text: "Незалежна сторінка розгляду акаунтів. Google Ads є торговою маркою Google LLC. Ця сторінка не пов’язана з Google."
       }
     };
 
-    const buttons = document.querySelectorAll(".lang-btn");
-    const nodes = document.querySelectorAll("[data-i18n]");
+    const langButton = document.getElementById("langTrigger");
+    const langMenu = document.getElementById("langMenu");
+    const currentLangLabel = document.getElementById("currentLangLabel");
+    const langOptions = document.querySelectorAll(".lang-option");
+    const textNodes = document.querySelectorAll("[data-i18n]");
+    const htmlNodes = document.querySelectorAll("[data-i18n-html]");
+
+    function detectLang() {
+      const saved = localStorage.getItem("site_lang");
+      if (saved && translations[saved]) return saved;
+
+      const navLang = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+
+      if (navLang.startsWith("uk")) return "uk";
+      if (navLang.startsWith("es")) return "es";
+      if (navLang.startsWith("pt")) return "pt";
+
+      return "en";
+    }
 
     function setLang(lang) {
       const dict = translations[lang] || translations.en;
 
-      nodes.forEach(node => {
+      textNodes.forEach(node => {
         const key = node.getAttribute("data-i18n");
         if (dict[key]) node.textContent = dict[key];
       });
 
-      buttons.forEach(btn => {
-        btn.classList.toggle("active", btn.dataset.lang === lang);
+      htmlNodes.forEach(node => {
+        const key = node.getAttribute("data-i18n-html");
+        if (dict[key]) node.innerHTML = dict[key];
+      });
+
+      currentLangLabel.textContent = dict.lang_label || "English";
+
+      langOptions.forEach(option => {
+        option.classList.toggle("active", option.dataset.lang === lang);
       });
 
       document.documentElement.lang = lang === "uk" ? "uk" : lang;
       localStorage.setItem("site_lang", lang);
     }
 
-    buttons.forEach(btn => {
-      btn.addEventListener("click", () => setLang(btn.dataset.lang));
+    langButton.addEventListener("click", () => {
+      const isOpen = langMenu.classList.toggle("open");
+      langButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
-    const savedLang = localStorage.getItem("site_lang");
-    setLang(savedLang || "en");
+    langOptions.forEach(option => {
+      option.addEventListener("click", () => {
+        setLang(option.dataset.lang);
+        langMenu.classList.remove("open");
+        langButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".lang-wrap")) {
+        langMenu.classList.remove("open");
+        langButton.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    setLang(detectLang());
   </script>
 </body>
 </html>
